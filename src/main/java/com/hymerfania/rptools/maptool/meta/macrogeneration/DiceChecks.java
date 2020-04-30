@@ -151,6 +151,8 @@ public class DiceChecks {
         System.out.println(makeStatDivBoxHidden());
         System.out.println(makeStorySkillDivBoxOpen());
         System.out.println(makeStorySkillDivBoxHidden());
+        System.out.println(makeMagicSkillDivBoxOpen());
+        System.out.println(makeMagicSkillDivBoxHidden());
     }
 
     private static String makeStatDivBoxOpen() {
@@ -214,6 +216,35 @@ public class DiceChecks {
         result.append(NL);
         return result.toString();
     }
+
+    private static String makeMagicSkillDivBoxOpen() {
+        List<String> inputElements = new ArrayList<>();
+        for (MagicSkill skill : MagicSkill.values()) {
+            inputElements.add(makeInputElement(skill,false));
+        }
+        StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Magic Skills:"));
+        result.append(NL);
+        result.append(String.join(NL, inputElements));
+        result.append(NL);
+        result.append("    </div>");
+        result.append(NL);
+        return result.toString();
+    }
+
+    private static String makeMagicSkillDivBoxHidden() {
+        List<String> inputElements = new ArrayList<>();
+        for (MagicSkill skill : MagicSkill.values()) {
+            inputElements.add(makeInputElement(skill,true));
+        }
+        StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Magic Skills:HIDDEN"));
+        result.append(NL);
+        result.append(String.join(NL, inputElements));
+        result.append(NL);
+        result.append("    </div>");
+        result.append(NL);
+        return result.toString();
+    }
+
 
     private static String buttonStyleString(Object keyRep, boolean hidden) {
         String value = keyRep.toString();
