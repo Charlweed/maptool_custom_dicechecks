@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style type="text/css">
+.box {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid #a8ab8e;
+    background-color: #ece9d8;
+    margin: 1em;
+}
+.rounded {
+     border-radius: 25px;
+}
+
+.submitButton, .submitButtonWide ,.submitButtonHidden, .submitButtonWideHidden {
+<!-- #e8e8e8 -->
+<!-- #ece9d8 -->
+    background:#e8e8e8;
+    color:#000000;
+    border: 1px solid #a8ab8e;
+    border-radius: 18px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    display:inline-block;
+    width: 40px;
+    height: 18px;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 3px 3px 5px grey
+}
+
+.submitButton:hover {
+  background-color: #a0d6d9;
+}
+
+.submitButtonWide {
+    width: 80px;
+}
+
+.submitButtonWide:hover {
+  background-color: #a0d6d9;
+}
+
+.submitButtonHidden, .submitButtonWideHidden {
+    color:#FFFFFF;
+    background:#42423e;
+}
+
+.submitButtonWideHidden {
+    width: 80px;
+}
+
+.submitButtonHidden:hover, .submitButtonWideHidden:hover {
+  background-color: #1434a8;
+}
+
+    </style>
+</head>
+
+<body>
+<form action="[r:processorLink]" method="json">
+    <div class="box rounded"><strong>Stat Saves:</strong><br>
+        <input class="submitButton" type="submit" name="macroLabel" value="Str">
+        <input class="submitButton" type="submit" name="macroLabel" value="Dex">
+        <input class="submitButton" type="submit" name="macroLabel" value="Int">
+        <input class="submitButton" type="submit" name="macroLabel" value="Con">
+        <input class="submitButton" type="submit" name="macroLabel" value="Wis">
+        <input class="submitButton" type="submit" name="macroLabel" value="Chr">
+        <input class="submitButtonWide" type="submit" name="macroLabel" value="Reflex">
+        <input class="submitButtonWide" type="submit" name="macroLabel" value="Fortitude">
+        <input class="submitButtonWide" type="submit" name="macroLabel" value="Will">
+        <input class="submitButtonWide" type="submit" name="macroLabel" value="Bravery">
+        <input class="submitButtonWide" type="submit" name="macroLabel" value="Luck">
+        <input class="submitButtonWide" type="submit" name="macroLabel" value="Sanity">
+    </div>
+    <div class="box rounded"><strong>Stat Saves: HIDDEN</strong><br>
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Str">
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Dex">
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Int">
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Con">
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Wis">
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Chr">
+        <input class="submitButtonWideHidden" type="submit" name="macroLabel" value="Reflex">
+        <input class="submitButtonWideHidden" type="submit" name="macroLabel" value="Fortitude">
+        <input class="submitButtonWideHidden" type="submit" name="macroLabel" value="Will">
+        <input class="submitButtonWideHidden" type="submit" name="macroLabel" value="Bravery">
+        <input class="submitButtonWideHidden" type="submit" name="macroLabel" value="Luck">
+        <input class="submitButtonWideHidden" type="submit" name="macroLabel" value="Sanity">
+    </div>
+</form>
+</body>
+</html>
