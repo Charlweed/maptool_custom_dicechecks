@@ -1,0 +1,43 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+.gradle
+./.gradle
+# Junk
+################################################################################
+._*
+.DS_Store
+.DS_Store?
+.Trashes
+*.bak
+*.lck
+*.lock
+*.log
+*.wbk
+*~
+~$.*
+~$*
+Backup.*
+ehthumbs.db
+Thumbs.db
+# Ignore Gradle build output directory
+################################################################################
+bin/
+build/
+out/
+target/
+# IDEs
+################################################################################
+.*.sw[p0-9]
+.classpath
+.history
+.idea/
+.nb-configuration.xml
+.nb-gradle/
+.project
+.settings/
+.sw[p0-9]
+*.iml
+# Volatile
+################################################################################
+private
+sbin/private.ps1
