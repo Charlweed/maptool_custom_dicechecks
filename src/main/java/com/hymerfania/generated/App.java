@@ -5,12 +5,14 @@ package com.hymerfania.generated;
 
 import java.io.IOException;
 import static com.hymerfania.rptools.maptool.meta.macrogeneration.DiceChecks.writeMetaMacroCodeToFile;
+import static com.hymerfania.rptools.maptool.meta.macrogeneration.DiceChecks.writeFormMacroCodeToFile;
 
 public class App {
 
     public static void main(String[] args) {
         try {
-            writeMetaMacroCodeToFile();
+            //writeMetaMacroCodeToFile();
+            writeFormMacroCodeToFile();
         }
         catch (IOException | InterruptedException thrown) {
             thrown.printStackTrace();

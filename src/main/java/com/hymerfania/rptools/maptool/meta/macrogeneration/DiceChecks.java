@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 public class DiceChecks {
     public static final String OPEN_STAT_CHECK_TEMPLATE =
@@ -84,16 +86,17 @@ public class DiceChecks {
             "[frame(\"Dice Checks & Saves\"): {%s" +
                     "[h: processorLink = macroLinkText(\"EnvokeDiceCheck@Lib:Master\", \"all\",\"\", currentToken())]%s" +
                     "<form action=\"[r:processorLink]\" method=\"json\">%s" +
-                    "%s"+
+                    "%s" +
                     "</form>%s" +
                     "}]";
 
-    public static final String BUTTON_ELEMENT_TEMPLATE = "<input type=\"submit\" name=\"macroLabel\" value=\"%s\">";
+    public static final String INPUT_ELEMENT_TEMPLATE = "        <input class=\"%s\" type=\"submit\" name=\"macroLabel\" value=\"%s\">";//buttonStyle, stat
+    public static final String DIV_BOX_ELEMENT_TEMPLATE = "    <div class=\"box rounded\"><strong>%s</strong><br>";
     public static final String MACRO_PROPS_OPEN_TEMPLATE = "applyToSelected=true;group=%s;playerEditable=false;autoExecute=true;sortBy=%d";//group
     public static final String MACRO_PROPS_HIDDEN_TEMPLATE = "applyToSelected=true;group=%s;playerEditable=false;autoExecute=true;sortBy=%d;color=gray25;fontColor=white";//group
-    private static final String NL = System.lineSeparator();
     public static final String META_MACRO_SOURCE_FILENAME = "r:/all_saves_macro_src.txt";
     public static final String FORM_MACRO_SOURCE_FILENAME = "r:/form_macro_src.txt";
+    private static final String NL = System.lineSeparator();
 
     public static void writeMetaMacroCodeToFile() throws IOException, InterruptedException {
         Path macroSourceTextFile = Paths.get(META_MACRO_SOURCE_FILENAME);
@@ -132,6 +135,70 @@ public class DiceChecks {
             appendLineToFile(makeMagicMetaMacroHidden(skill), META_MACRO_SOURCE_FILENAME);
             appendLineToFile(NL, META_MACRO_SOURCE_FILENAME);
         }
+    }
+
+    public static void writeFormMacroCodeToFile() throws IOException, InterruptedException {
+        Path macroSourceTextFile = Paths.get(FORM_MACRO_SOURCE_FILENAME);
+
+        Files.deleteIfExists(macroSourceTextFile);
+        Thread.sleep(500L);
+
+        if (Files.exists(macroSourceTextFile)) {
+            throw new IOException("Could not delete " + macroSourceTextFile.toAbsolutePath());
+        }
+        System.out.println("Writing macro text to " + macroSourceTextFile.toAbsolutePath());
+        System.out.println(makeStatDivBoxOpen());
+        System.out.println(makeStatDivBoxHidden());
+    }
+
+    private static String makeStatDivBoxOpen() {
+        List<String> inputElements = new ArrayList<>();
+        for (BaseStat stat : BaseStat.values()) {
+            inputElements.add(makeStatInputElementOpen(stat));
+        }
+        for (SecondaryStat stat : SecondaryStat.values()) {
+            inputElements.add(makeStatInputElementOpen(stat));
+        }
+        StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Stat Saves:"));
+        result.append(NL);
+        result.append(String.join(NL, inputElements));
+        result.append(NL);
+        result.append("    </div>");
+        result.append(NL);
+        return result.toString();
+    }
+
+    private static String makeStatDivBoxHidden() {
+        List<String> inputElements = new ArrayList<>();
+        for (BaseStat stat : BaseStat.values()) {
+            inputElements.add(makeStatInputElementHidden(stat));
+        }
+        for (SecondaryStat stat : SecondaryStat.values()) {
+            inputElements.add(makeStatInputElementHidden(stat));
+        }
+        StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Stat Saves:HIDDEN"));
+        result.append(NL);
+        result.append(String.join(NL, inputElements));
+        result.append(NL);
+        result.append("    </div>");
+        result.append(NL);
+        return result.toString();
+    }
+
+    private static String makeStatInputElementOpen(final BaseStat stat) {
+        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButton", stat.getAbbreviation());
+    }
+
+    private static String makeStatInputElementOpen(final SecondaryStat stat) {
+        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButtonWide", stat.toString());
+    }
+
+    private static String makeStatInputElementHidden(final BaseStat stat) {
+        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButtonHidden", stat.getAbbreviation());
+    }
+
+    private static String makeStatInputElementHidden(final SecondaryStat stat) {
+        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButtonWideHidden", stat.toString());
     }
 
     public static String makeStatMetaMacroOpen(BaseStat stat) {
