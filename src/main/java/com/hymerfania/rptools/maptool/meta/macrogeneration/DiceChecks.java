@@ -149,15 +149,17 @@ public class DiceChecks {
         System.out.println("Writing macro text to " + macroSourceTextFile.toAbsolutePath());
         System.out.println(makeStatDivBoxOpen());
         System.out.println(makeStatDivBoxHidden());
+        System.out.println(makeStorySkillDivBoxOpen());
+        System.out.println(makeStorySkillDivBoxHidden());
     }
 
     private static String makeStatDivBoxOpen() {
         List<String> inputElements = new ArrayList<>();
         for (BaseStat stat : BaseStat.values()) {
-            inputElements.add(makeStatInputElementOpen(stat));
+            inputElements.add(makeInputElement(stat,false));
         }
         for (SecondaryStat stat : SecondaryStat.values()) {
-            inputElements.add(makeStatInputElementOpen(stat));
+            inputElements.add(makeInputElement(stat,false));
         }
         StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Stat Saves:"));
         result.append(NL);
@@ -171,10 +173,10 @@ public class DiceChecks {
     private static String makeStatDivBoxHidden() {
         List<String> inputElements = new ArrayList<>();
         for (BaseStat stat : BaseStat.values()) {
-            inputElements.add(makeStatInputElementHidden(stat));
+            inputElements.add(makeInputElement(stat,true));
         }
         for (SecondaryStat stat : SecondaryStat.values()) {
-            inputElements.add(makeStatInputElementHidden(stat));
+            inputElements.add(makeInputElement(stat,true));
         }
         StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Stat Saves:HIDDEN"));
         result.append(NL);
@@ -185,45 +187,80 @@ public class DiceChecks {
         return result.toString();
     }
 
-    private static String makeStatInputElementOpen(final BaseStat stat) {
-        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButton", stat.getAbbreviation());
+    private static String makeStorySkillDivBoxOpen() {
+        List<String> inputElements = new ArrayList<>();
+        for (StorySkill skill : StorySkill.values()) {
+            inputElements.add(makeInputElement(skill,false));
+        }
+        StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Story Skills:"));
+        result.append(NL);
+        result.append(String.join(NL, inputElements));
+        result.append(NL);
+        result.append("    </div>");
+        result.append(NL);
+        return result.toString();
     }
 
-    private static String makeStatInputElementOpen(final SecondaryStat stat) {
-        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButtonWide", stat.toString());
+    private static String makeStorySkillDivBoxHidden() {
+        List<String> inputElements = new ArrayList<>();
+        for (StorySkill skill : StorySkill.values()) {
+            inputElements.add(makeInputElement(skill,true));
+        }
+        StringBuilder result = new StringBuilder(String.format(DIV_BOX_ELEMENT_TEMPLATE, "Story Skills:HIDDEN"));
+        result.append(NL);
+        result.append(String.join(NL, inputElements));
+        result.append(NL);
+        result.append("    </div>");
+        result.append(NL);
+        return result.toString();
     }
 
-    private static String makeStatInputElementHidden(final BaseStat stat) {
-        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButtonHidden", stat.getAbbreviation());
+    private static String buttonStyleString(Object keyRep, boolean hidden) {
+        String value = keyRep.toString();
+        String styleStr ="submitButtonWide0";
+        if (value.length() < 4) {
+            styleStr = "submitButton";
+        }
+        if (value.length() > 11) {
+            styleStr = "submitButtonWide1";
+        }
+        if (hidden) {
+            styleStr = styleStr + "Hidden";
+        }
+        return styleStr;
     }
 
-    private static String makeStatInputElementHidden(final SecondaryStat stat) {
-        return String.format(INPUT_ELEMENT_TEMPLATE, "submitButtonWideHidden", stat.toString());
+    private static String makeInputElement(BaseStat keyRep, boolean hidden){
+        return makeInputElement(keyRep.getAbbreviation(),hidden);
     }
 
-    public static String makeStatMetaMacroOpen(BaseStat stat) {
+    private static String makeInputElement(Object keyRep, boolean hidden){
+        return String.format(INPUT_ELEMENT_TEMPLATE, buttonStyleString(keyRep,hidden), keyRep.toString());
+    }
+
+    private static String makeStatMetaMacroOpen(BaseStat stat) {
         String encodedText = Base64.getEncoder().encodeToString(makeStatOpenCheckMacroText(stat.toString()).getBytes());
         return makeMetaMacroText(stat.getAbbreviation(), encodedText, "\tStat Saves:", stat.ordinal() + 1);
     }
 
-    public static String makeStatMetaMacroHidden(BaseStat stat) {
+    private static String makeStatMetaMacroHidden(BaseStat stat) {
         String encodedText = Base64.getEncoder()
                                    .encodeToString(makeStatHiddenCheckMacroText(stat.toString()).getBytes());
         return makeMetaMacroText(stat.getAbbreviation(), encodedText, "\tStat Saves: HIDDEN", stat.ordinal() + 1, true);
     }
 
-    public static String makeStatMetaMacroOpen(SecondaryStat stat) {
+    private static String makeStatMetaMacroOpen(SecondaryStat stat) {
         String encodedText = Base64.getEncoder().encodeToString(makeStatOpenCheckMacroText(stat.toString()).getBytes());
         return makeMetaMacroText(stat.toString(), encodedText, "\tStat Saves:", stat.ordinal() + 7);
     }
 
-    public static String makeStatMetaMacroHidden(SecondaryStat stat) {
+    private static String makeStatMetaMacroHidden(SecondaryStat stat) {
         String encodedText = Base64.getEncoder()
                                    .encodeToString(makeStatHiddenCheckMacroText(stat.toString()).getBytes());
         return makeMetaMacroText(stat.toString(), encodedText, "\tStat Saves: HIDDEN", stat.ordinal() + 7, true);
     }
 
-    public static String makeSkillMetaMacroOpen(StorySkill skill) {
+    private static String makeSkillMetaMacroOpen(StorySkill skill) {
         String encodedText = Base64.getEncoder()
                                    .encodeToString(
                                            makeSkillOpenCheckMacroText(skill.statOf().toString(),
@@ -231,7 +268,7 @@ public class DiceChecks {
         return makeMetaMacroText(skill.toString(), encodedText, "Story Skills:", skill.ordinal() + 1);
     }
 
-    public static String makeSkillMetaMacroHidden(StorySkill skill) {
+    private static String makeSkillMetaMacroHidden(StorySkill skill) {
         String encodedText = Base64.getEncoder()
                                    .encodeToString(
                                            makeSkillHiddenCheckMacroText(skill.statOf().toString(),
@@ -239,7 +276,7 @@ public class DiceChecks {
         return makeMetaMacroText(skill.toString(), encodedText, "Story Skills: HIDDEN", skill.ordinal() + 1, true);
     }
 
-    public static String makeMagicMetaMacroOpen(MagicSkill skill) {
+    private static String makeMagicMetaMacroOpen(MagicSkill skill) {
         String encodedText = Base64.getEncoder()
                                    .encodeToString(
                                            makeMagicOpenCheckMacroText(skill.statOf().toString(),
@@ -247,7 +284,7 @@ public class DiceChecks {
         return makeMetaMacroText(skill.toString(), encodedText, "\u007fMagic Skills:", skill.ordinal() + 1);
     }
 
-    public static String makeMagicMetaMacroHidden(MagicSkill skill) {
+    private static String makeMagicMetaMacroHidden(MagicSkill skill) {
         String encodedText = Base64.getEncoder()
                                    .encodeToString(
                                            makeMagicHiddenCheckMacroText(skill.statOf().toString(),
@@ -256,15 +293,15 @@ public class DiceChecks {
                 true);
     }
 
-    public static String makeMagicOpenCheckMacroText(String stat, String skill) {
+    private static String makeMagicOpenCheckMacroText(String stat, String skill) {
         return String.format(OPEN_MAGIC_CHECK_TEMPLATE, skill, stat);
     }
 
-    public static String makeMetaMacroText(String label, String encoded, String group, int sortBy) {
+    private static String makeMetaMacroText(String label, String encoded, String group, int sortBy) {
         return makeMetaMacroText(label, encoded, group, sortBy, false);
     }
 
-    public static String makeMetaMacroText(String label, String encoded, String group, int sortBy, boolean hidden) {
+    private static String makeMetaMacroText(String label, String encoded, String group, int sortBy, boolean hidden) {
         final String result;
         String propText;
         if (!hidden) {
@@ -279,23 +316,23 @@ public class DiceChecks {
         return result;
     }
 
-    public static String makeStatOpenCheckMacroText(String stat) {
+    private static String makeStatOpenCheckMacroText(String stat) {
         return String.format(OPEN_STAT_CHECK_TEMPLATE, stat);
     }
 
-    public static String makeStatHiddenCheckMacroText(String stat) {
+    private static String makeStatHiddenCheckMacroText(String stat) {
         return String.format(HIDDEN_STAT_CHECK_TEMPLATE, stat, stat, stat, stat);
     }
 
-    public static String makeSkillOpenCheckMacroText(String stat, String skill) {
+    private static String makeSkillOpenCheckMacroText(String stat, String skill) {
         return String.format(OPEN_SKILL_CHECK_TEMPLATE, skill, stat);
     }
 
-    public static String makeSkillHiddenCheckMacroText(String stat, String skill) {
+    private static String makeSkillHiddenCheckMacroText(String stat, String skill) {
         return String.format(HIDDEN_SKILL_CHECK_TEMPLATE, skill, stat);
     }
 
-    public static String makeMagicHiddenCheckMacroText(String stat, String skill) {
+    private static String makeMagicHiddenCheckMacroText(String stat, String skill) {
         return String.format(HIDDEN_MAGIC_CHECK_TEMPLATE, skill, stat);
     }
 
