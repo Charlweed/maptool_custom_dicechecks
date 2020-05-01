@@ -4,31 +4,28 @@
 <head>
     <title>Dice Checks and Saves</title>
     <style type="text/css">
-.box {
-    width: 100%;
-    padding: 12px;
-    border: 3px solid #a8ab8e;
+
+div {
     background-color: #ece9d8;
+    border-color: #a8ab8e;
+    border-radius: 25px;
+    border-style:solid;
+    border-width:3px;
     margin: 1em;
-}
-.rounded {
-     border-radius: 25px;
+    padding: 12px;
+    width: 100%;
 }
 
 .submitButton, .submitButtonHidden, .submitButtonWide0, .submitButtonWide0Hidden,.submitButtonWide1, .submitButtonWide1Hidden {
-<!-- #e8e8e8 -->
-<!-- #ece9d8 -->
-    background:#e8e8e8;
-    color:#000000;
-    border: 1px solid #a8ab8e;
+    background: #e8e8e8;
     border-radius: 18px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    border-color: #a8ab8e;
+    border-style:solid;
+    border-width:31x;
+    color:#000000;
     display:inline-block;
-    width: 40px;
     height: 18px;
-    -webkit-font-smoothing: antialiased;
-    text-shadow: 3px 3px 5px grey
+    width: 40px;
 }
 
 .submitButton:hover {
@@ -70,7 +67,94 @@
 
 <body>
 <form action="[r:processorLink]" method="json">
-%s
+    <div class="box"><strong>Stat Saves:</strong><br>
+        <input class="submitButton" type="submit" name="macroLabel" value="Str"/>
+        <input class="submitButton" type="submit" name="macroLabel" value="Dex"/>
+        <input class="submitButton" type="submit" name="macroLabel" value="Int"/>
+        <input class="submitButton" type="submit" name="macroLabel" value="Con"/>
+        <input class="submitButton" type="submit" name="macroLabel" value="Wis"/>
+        <input class="submitButton" type="submit" name="macroLabel" value="Chr"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Reflex"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Fortitude"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Will"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Bravery"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Luck"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Sanity"/>
+    </div>
+    <div class="boxHidden"><strong>Stat Saves:HIDDEN</strong><br>
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Str"/>
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Dex"/>
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Int"/>
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Con"/>
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Wis"/>
+        <input class="submitButtonHidden" type="submit" name="macroLabel" value="Chr"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Reflex"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Fortitude"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Will"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Bravery"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Luck"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Sanity"/>
+    </div>
+    <div class="box"><strong>Story Skills:</strong><br>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Acrobatics"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Athletics"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Concocting"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Crafting"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Diplomacy"/>
+        <input class="submitButtonWide1" type="submit" name="macroLabel" value="Dungeoneering"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="HighSociety"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Insight"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Intimidate"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Lore"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Medical"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Nature"/>
+        <input class="submitButtonWide1" type="submit" name="macroLabel" value="PerformingArts"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Perception"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Seafaring"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Stealth"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Streetwise"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Theology"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Thievery"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Common"/>
+    </div>
+    <div class="boxHidden"><strong>Story Skills:HIDDEN</strong><br>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Acrobatics"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Athletics"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Concocting"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Crafting"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Diplomacy"/>
+        <input class="submitButtonWide1Hidden" type="submit" name="macroLabel" value="Dungeoneering"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="HighSociety"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Insight"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Intimidate"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Lore"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Medical"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Nature"/>
+        <input class="submitButtonWide1Hidden" type="submit" name="macroLabel" value="PerformingArts"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Perception"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Seafaring"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Stealth"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Streetwise"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Theology"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Thievery"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Common"/>
+    </div>
+    <div class="box"><strong>Magic Skills:</strong><br>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Elemental"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Black"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="White"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Mind"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Planes"/>
+        <input class="submitButtonWide0" type="submit" name="macroLabel" value="Voodoo"/>
+    </div>
+    <div class="boxHidden"><strong>Magic Skills:HIDDEN</strong><br>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Elemental"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Black"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="White"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Mind"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Planes"/>
+        <input class="submitButtonWide0Hidden" type="submit" name="macroLabel" value="Voodoo"/>
+    </div>
 </form>
 </body>
 </html>
