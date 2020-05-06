@@ -7,8 +7,8 @@ public class Templates {
     public static final String MACRO_PROPS_OPEN_TEMPLATE = "applyToSelected=true;group=%s;playerEditable=false;autoExecute=true;sortBy=%d";//group
     public static final String MACRO_PROPS_HIDDEN_TEMPLATE = "applyToSelected=true;group=%s;playerEditable=false;autoExecute=true;sortBy=%d;color=gray25;fontColor=white";//group
 
-    public static final String OPEN_STAT_CHECK_TEMPLATE =
-            "<!-- Open Stat Check -->%n" +
+    public static final String OPEN_BASESTAT_CHECK_TEMPLATE =
+            "<!-- Open Base Stat Check -->%n" +
                     "[h:de.lib.TestOwnership()]%n" +
                     "[h:Roll = 2d10]%n" +
                     "[h:Stat = \"%s\"]%n" +
@@ -16,8 +16,28 @@ public class Templates {
                     "[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])%n" +
                     "%n";
 
-    public static final String HIDDEN_STAT_CHECK_TEMPLATE =
-            "<!-- Hidden Stat Check -->%n" +
+    public static final String HIDDEN_BASESTAT_CHECK_TEMPLATE =
+            "<!-- Hidden Base Stat Check -->%n" +
+                    "[h:de.lib.TestOwnership()]%n" +
+                    "[h:Roll = 2d10]%n" +
+                    "[h:Stat = \"%s\"]%n" +
+                    "[h:StatMod = de.lib.Mod(eval(Stat))]%n" +
+                    "[h:%sCheck = Roll + StatMod]%n" +
+                    "Hidden %s Save<br>%n" +
+                    "[h:Result = Stat + \" Save: <font color=green size=+2><b>\" + %sCheck + \"</b></font><br> (Roll :\" + Roll + \", \" + Stat + \":\" + StatMod + \")\"]%n" +
+                    "[g:Result]%n%n";
+
+    public static final String OPEN_2NDSTAT_CHECK_TEMPLATE =
+            "<!-- Open Secondary Stat Check -->%n" +
+                    "[h:de.lib.TestOwnership()]%n" +
+                    "[h:Roll = 2d10]%n" +
+                    "[h:Stat = \"%s\"]%n" +
+                    "[h:StatMod = eval(Stat)]%n" +
+                    "[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])%n" +
+                    "%n";
+
+    public static final String HIDDEN_2NDSTAT_CHECK_TEMPLATE =
+            "<!-- Hidden Secondary Stat Check -->%n" +
                     "[h:de.lib.TestOwnership()]%n" +
                     "[h:Roll = 2d10]%n" +
                     "[h:Stat = \"%s\"]%n" +
@@ -154,7 +174,7 @@ public class Templates {
             "<html>%n" +
                     "<head>%n" +
                     "    <title>Dice Checks and Saves</title>%n" +
-                    "    <link rel='stylesheet' type='text/css' href='DiceCheckForm_css@[r: getMacroLocation()]'></link>%n" +
+                    "    <link rel='stylesheet' type='text/css' href='DiceCheckForm_css@Lib:Master'></link>%n" +
                     "</head>%n" +
                     "%n" +
                     "<body>%n" +

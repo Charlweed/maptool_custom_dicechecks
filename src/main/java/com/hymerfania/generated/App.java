@@ -11,7 +11,7 @@ public class App {
 
     public static void main(String[] args) {
         try {
-            //writeMetaMacroCodeToFile();
+            writeMetaMacroCodeToFile();
             writeFormMacroCodeToFile();
         }
         catch (IOException | InterruptedException thrown) {

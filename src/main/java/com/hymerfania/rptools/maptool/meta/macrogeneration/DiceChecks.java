@@ -12,7 +12,8 @@ import java.util.List;
 
 @SuppressWarnings("StringBufferReplaceableByString")
 public class DiceChecks {
-    public static final String META_MACRO_SOURCE_FILENAME = "r:/all_saves_macro_src.txt";
+    public static final String META_MACRO_SOURCE_FILENAME = "r:/all_saves_meta_macro_src.html";
+    public static final String CLEAR_MACRO_SOURCE_FILENAME = "r:/all_saves_clear_macro_src.html";
     public static final String FORM_MACRO_SOURCE_FILENAME = "r:/form_macro_src.html";
     static final String NL = System.lineSeparator();
 
@@ -28,15 +29,15 @@ public class DiceChecks {
         System.out.println("Writing macro text to " + macroSourceTextFile.toAbsolutePath());
 
         for (BaseStat stat : BaseStat.values()) {
-            appendLineToFile(makeStatMetaMacroOpen(stat), META_MACRO_SOURCE_FILENAME);
-            appendLineToFile(makeStatMetaMacroHidden(stat), META_MACRO_SOURCE_FILENAME);
+            appendLineToFile(makeBaseStatMetaMacroOpen(stat), META_MACRO_SOURCE_FILENAME);
+            appendLineToFile(makeBaseStatMetaMacroHidden(stat), META_MACRO_SOURCE_FILENAME);
             appendLineToFile(NL, META_MACRO_SOURCE_FILENAME);
         }
         appendLineToFile(NL, META_MACRO_SOURCE_FILENAME);
 
         for (SecondaryStat stat : SecondaryStat.values()) {
-            appendLineToFile(makeStatMetaMacroOpen(stat), META_MACRO_SOURCE_FILENAME);
-            appendLineToFile(makeStatMetaMacroHidden(stat), META_MACRO_SOURCE_FILENAME);
+            appendLineToFile(makeSecondaryStatMetaMacroOpen(stat), META_MACRO_SOURCE_FILENAME);
+            appendLineToFile(makeSecondaryStatMetaMacroHidden(stat), META_MACRO_SOURCE_FILENAME);
             appendLineToFile(NL, META_MACRO_SOURCE_FILENAME);
         }
         appendLineToFile(NL, META_MACRO_SOURCE_FILENAME);
@@ -196,63 +197,72 @@ public class DiceChecks {
         return String.format(Templates.INPUT_ELEMENT_TEMPLATE, buttonStyleString(keyRep, hidden), keyRep.toString());
     }
 
-    private static String makeStatMetaMacroOpen(BaseStat stat) {
-        String encodedText = Base64.getEncoder().encodeToString(makeStatOpenCheckMacroText(stat.toString()).getBytes());
+    private static String makeBaseStatMetaMacroOpen(BaseStat stat) {
+        String clearText = makeBaseStatOpenCheckMacroText(stat.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
+        String encodedText = Base64.getEncoder().encodeToString(clearText.getBytes());
         return makeMetaMacroText(stat.getAbbreviation(), encodedText, "\tStat Saves:", stat.ordinal() + 1);
     }
 
-    private static String makeStatMetaMacroHidden(BaseStat stat) {
+    private static String makeBaseStatMetaMacroHidden(BaseStat stat) {
+        String clearText = makeBaseStatHiddenCheckMacroText(stat.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
         String encodedText = Base64.getEncoder()
-                                   .encodeToString(makeStatHiddenCheckMacroText(stat.toString()).getBytes());
+                                   .encodeToString(clearText.getBytes());
         return makeMetaMacroText(stat.getAbbreviation(), encodedText, "\tStat Saves: HIDDEN", stat.ordinal() + 1, true);
     }
 
-    private static String makeStatMetaMacroOpen(SecondaryStat stat) {
-        String encodedText = Base64.getEncoder().encodeToString(makeStatOpenCheckMacroText(stat.toString()).getBytes());
+    private static String makeSecondaryStatMetaMacroOpen(SecondaryStat stat) {
+        String clearText = makeSecondaryStatOpenCheckMacroText(stat.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
+        String encodedText = Base64.getEncoder().encodeToString(clearText.getBytes());
         return makeMetaMacroText(stat.toString(), encodedText, "\tStat Saves:", stat.ordinal() + 7);
     }
 
-    private static String makeStatMetaMacroHidden(SecondaryStat stat) {
+    private static String makeSecondaryStatMetaMacroHidden(SecondaryStat stat) {
+        String clearText = makeSecondaryStatHiddenCheckMacroText(stat.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
         String encodedText = Base64.getEncoder()
-                                   .encodeToString(makeStatHiddenCheckMacroText(stat.toString()).getBytes());
+                                   .encodeToString(clearText.getBytes());
         return makeMetaMacroText(stat.toString(), encodedText, "\tStat Saves: HIDDEN", stat.ordinal() + 7, true);
     }
 
     private static String makeSkillMetaMacroOpen(StorySkill skill) {
+        String clearText = makeSkillOpenCheckMacroText(skill.statOf().toString(), skill.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
         String encodedText = Base64.getEncoder()
-                                   .encodeToString(
-                                           makeSkillOpenCheckMacroText(skill.statOf().toString(),
-                                                   skill.toString()).getBytes());
+                                   .encodeToString(clearText.getBytes());
         return makeMetaMacroText(skill.toString(), encodedText, "Story Skills:", skill.ordinal() + 1);
     }
 
     private static String makeSkillMetaMacroHidden(StorySkill skill) {
+        String clearText = makeSkillHiddenCheckMacroText(skill.statOf().toString(), skill.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
         String encodedText = Base64.getEncoder()
-                                   .encodeToString(
-                                           makeSkillHiddenCheckMacroText(skill.statOf().toString(),
-                                                   skill.toString()).getBytes());
+                                   .encodeToString(clearText.getBytes());
         return makeMetaMacroText(skill.toString(), encodedText, "Story Skills: HIDDEN", skill.ordinal() + 1, true);
     }
 
     private static String makeMagicMetaMacroOpen(MagicSkill skill) {
+        String clearText = makeMagicOpenCheckMacroText(skill.statOf().toString(), skill.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
         String encodedText = Base64.getEncoder()
-                                   .encodeToString(
-                                           makeMagicOpenCheckMacroText(skill.statOf().toString(),
-                                                   skill.toString()).getBytes());
+                                   .encodeToString(clearText.getBytes());
         return makeMetaMacroText(skill.toString(), encodedText, "\u007fMagic Skills:", skill.ordinal() + 1);
     }
 
     private static String makeMagicMetaMacroHidden(MagicSkill skill) {
+        String clearText = makeMagicHiddenCheckMacroText(skill.statOf().toString(), skill.toString());
+        appendLineToFile(clearText,CLEAR_MACRO_SOURCE_FILENAME);
         String encodedText = Base64.getEncoder()
-                                   .encodeToString(
-                                           makeMagicHiddenCheckMacroText(skill.statOf().toString(),
-                                                   skill.toString()).getBytes());
+                                   .encodeToString(clearText.getBytes());
         return makeMetaMacroText(skill.toString(), encodedText, "\u007fMagic Skills: HIDDEN", skill.ordinal() + 1,
                 true);
     }
 
     private static String makeMagicOpenCheckMacroText(String stat, String skill) {
-        return String.format(Templates.OPEN_MAGIC_CHECK_TEMPLATE, skill, stat);
+        String clearText = String.format(Templates.OPEN_MAGIC_CHECK_TEMPLATE, skill, stat);
+        return clearText;
     }
 
     private static String makeMetaMacroText(String label, String encoded, String group, int sortBy) {
@@ -274,12 +284,20 @@ public class DiceChecks {
         return result;
     }
 
-    private static String makeStatOpenCheckMacroText(String stat) {
-        return String.format(Templates.OPEN_STAT_CHECK_TEMPLATE, stat);
+    private static String makeBaseStatOpenCheckMacroText(String stat) {
+        return String.format(Templates.OPEN_BASESTAT_CHECK_TEMPLATE, stat);
     }
 
-    private static String makeStatHiddenCheckMacroText(String stat) {
-        return String.format(Templates.HIDDEN_STAT_CHECK_TEMPLATE, stat, stat, stat, stat);
+    private static String makeBaseStatHiddenCheckMacroText(String stat) {
+        return String.format(Templates.HIDDEN_BASESTAT_CHECK_TEMPLATE, stat, stat, stat, stat);
+    }
+
+    private static String makeSecondaryStatOpenCheckMacroText(String stat) {
+        return String.format(Templates.OPEN_2NDSTAT_CHECK_TEMPLATE, stat);
+    }
+
+    private static String makeSecondaryStatHiddenCheckMacroText(String stat) {
+        return String.format(Templates.HIDDEN_2NDSTAT_CHECK_TEMPLATE, stat, stat, stat, stat);
     }
 
     private static String makeSkillOpenCheckMacroText(String stat, String skill) {

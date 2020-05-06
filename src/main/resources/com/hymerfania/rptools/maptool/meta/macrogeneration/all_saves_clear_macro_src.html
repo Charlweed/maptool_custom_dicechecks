@@ -1,0 +1,864 @@
+<!-- Open Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Strength"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Strength"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StrengthCheck = Roll + StatMod]
+Hidden Strength Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + StrengthCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:DexterityCheck = Roll + StatMod]
+Hidden Dexterity Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + DexterityCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:IntelligenceCheck = Roll + StatMod]
+Hidden Intelligence Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + IntelligenceCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Constitution"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Constitution"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:ConstitutionCheck = Roll + StatMod]
+Hidden Constitution Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + ConstitutionCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:WisdomCheck = Roll + StatMod]
+Hidden Wisdom Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + WisdomCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Base Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:CharismaCheck = Roll + StatMod]
+Hidden Charisma Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + CharismaCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Reflex"]
+[h:StatMod = eval(Stat)]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Reflex"]
+[h:StatMod = eval(Stat)]
+[h:ReflexCheck = Roll + StatMod]
+Hidden Reflex Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + ReflexCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Fortitude"]
+[h:StatMod = eval(Stat)]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Fortitude"]
+[h:StatMod = eval(Stat)]
+[h:FortitudeCheck = Roll + StatMod]
+Hidden Fortitude Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + FortitudeCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Will"]
+[h:StatMod = eval(Stat)]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Will"]
+[h:StatMod = eval(Stat)]
+[h:WillCheck = Roll + StatMod]
+Hidden Will Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + WillCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Bravery"]
+[h:StatMod = eval(Stat)]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Bravery"]
+[h:StatMod = eval(Stat)]
+[h:BraveryCheck = Roll + StatMod]
+Hidden Bravery Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + BraveryCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Luck"]
+[h:StatMod = eval(Stat)]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Luck"]
+[h:StatMod = eval(Stat)]
+[h:LuckCheck = Roll + StatMod]
+Hidden Luck Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + LuckCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Sanity"]
+[h:StatMod = eval(Stat)]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br> (Roll :[Roll], [Stat]:[StatMod])
+
+
+<!-- Hidden Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Sanity"]
+[h:StatMod = eval(Stat)]
+[h:SanityCheck = Roll + StatMod]
+Hidden Sanity Save<br>
+[h:Result = Stat + " Save: <font color=green size=+2><b>" + SanityCheck + "</b></font><br> (Roll :" + Roll + ", " + Stat + ":" + StatMod + ")"]
+[g:Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Acrobatics"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Acrobatics"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Athletics"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Constitution"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Athletics"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Constitution"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Concocting"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Concocting"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Crafting"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Crafting"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Diplomacy"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Diplomacy"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Dungeoneering"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Dungeoneering"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "HighSociety"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "HighSociety"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Insight"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Insight"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Intimidate"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Intimidate"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Lore"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Lore"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Medical"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Medical"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Nature"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Nature"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "PerformingArts"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "PerformingArts"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Perception"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Perception"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Seafaring"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Seafaring"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Stealth"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Stealth"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Streetwise"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Streetwise"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Theology"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Theology"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Wisdom"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Thievery"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Thievery"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Common"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br> (Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Story Skill Check -->
+[de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Common"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[token.name] rolls secret [Skill] check.<br>
+[h: Result = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g: Result]
+
+
+<!-- Open Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Elemental"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[SkillName] roll: <font color=green size=+2><b>
+[r: Roll + SkillMod + StatMod]
+</b></font><br> (Roll :[Roll], [SkillName] Magic: [SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Elemental"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[token.name] rolls secret [Skill] Magic check.<br>
+[h:LocalResult = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g:LocalResult]
+
+
+<!-- Open Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Black"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[SkillName] roll: <font color=green size=+2><b>
+[r: Roll + SkillMod + StatMod]
+</b></font><br> (Roll :[Roll], [SkillName] Magic: [SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Black"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[token.name] rolls secret [Skill] Magic check.<br>
+[h:LocalResult = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g:LocalResult]
+
+
+<!-- Open Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "White"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[SkillName] roll: <font color=green size=+2><b>
+[r: Roll + SkillMod + StatMod]
+</b></font><br> (Roll :[Roll], [SkillName] Magic: [SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "White"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[token.name] rolls secret [Skill] Magic check.<br>
+[h:LocalResult = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g:LocalResult]
+
+
+<!-- Open Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Mind"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[SkillName] roll: <font color=green size=+2><b>
+[r: Roll + SkillMod + StatMod]
+</b></font><br> (Roll :[Roll], [SkillName] Magic: [SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Mind"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[token.name] rolls secret [Skill] Magic check.<br>
+[h:LocalResult = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g:LocalResult]
+
+
+<!-- Open Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Planes"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[SkillName] roll: <font color=green size=+2><b>
+[r: Roll + SkillMod + StatMod]
+</b></font><br> (Roll :[Roll], [SkillName] Magic: [SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Planes"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Intelligence" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[token.name] rolls secret [Skill] Magic check.<br>
+[h:LocalResult = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g:LocalResult]
+
+
+<!-- Open Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Voodoo"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[SkillName] roll: <font color=green size=+2><b>
+[r: Roll + SkillMod + StatMod]
+</b></font><br> (Roll :[Roll], [SkillName] Magic: [SkillMod], [Stat]:[StatMod])
+
+
+<!-- Hidden Magic Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:SkillName = "Voodoo"]
+[h:Skill = "Skill" + SkillName]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Charisma" ]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[token.name] rolls secret [Skill] Magic check.<br>
+[h:LocalResult = Skill + " roll: <font color=green size=+2><b>" + (Roll + SkillMod + StatMod) + "</b></font><br> (Roll :" + Roll +", " + Skill + ":" + SkillMod + ", " + Stat + ":" + StatMod + ")"]
+[g:LocalResult]
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>DiceCheck Macros Raw</title>
+</head>
+<body>
+<!-- Open Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Strength"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br>
+(Roll :[Roll], [Stat]:[StatMod])
+
+<!-- Open Secondary Stat Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Stat = "Luck"]
+[h:StatMod = eval(Stat)]
+[Stat] Save: <font color=green size=+2><b>[r: Roll + StatMod]</b></font><br>
+(Roll :[Roll], [Stat]:[StatMod])
+
+<!-- Open Story Skill Check -->
+[h:de.lib.TestOwnership()]
+[h:Roll = 2d10]
+[h:Skill = "Acrobatics"]
+[h:SkillMod = eval(Skill)]
+[h:Stat = "Dexterity"]
+[h:StatMod = de.lib.Mod(eval(Stat))]
+[h:StatMod = min(StatMod, SkillMod)]
+[Skill] roll: <font color=green size=+2><b>[r: Roll + SkillMod + StatMod]</b></font><br>
+(Roll :[Roll], [Skill]:[SkillMod], [Stat]:[StatMod])
+
+</body>
+</html>
